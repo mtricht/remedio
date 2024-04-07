@@ -1,0 +1,19 @@
+{{ define "content" }}
+<div id="content">
+    <form action="/edit/{{ .ID }}" method="post">
+        <p>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" value="{{ .Name }}" required>
+        </p>
+        <p>
+            <label for="time">Reminder time (once a day)</label>
+            <input id="time" name="time" type="time" value="{{ .Time.Format "15:04"}}" required>
+        </p>
+        <p>
+            <label for="supply">Supply</label>
+            <input id="supply" name="supply" type="number" value="{{ .Supply}}" required>
+        </p>
+        <button>Save</button>
+    </form>
+</div>
+{{ end }}

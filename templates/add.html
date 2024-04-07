@@ -1,0 +1,19 @@
+{{ define "content" }}
+<div id="content">
+    <form action="/add" method="post">
+        <p>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+        </p>
+        <p>
+            <label for="time">Reminder time (once a day)</label>
+            <input id="time" name="time" type="time" required>
+        </p>
+        <p>
+            <label for="supply">Supply</label>
+            <input id="supply" name="supply" type="number" required>
+        </p>
+        <button>Add</button>
+    </form>
+</div>
+{{ end }}

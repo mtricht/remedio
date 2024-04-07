@@ -1,0 +1,55 @@
+body {
+    max-width: 750px;
+    color: #fff;
+    font-family: sans-serif
+}
+
+a,
+a:visited {
+    color: #FF3366;
+}
+
+a:hover {
+    color: #FF3366;
+    text-decoration: underline;
+    border-bottom: 0
+}
+
+#title {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 10px;
+}
+
+.row:nth-child(odd) {
+    background-color: #3B3B3B;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+li p {
+    margin-bottom: 5px
+}
+
+button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.error {
+    color: #E60039;
+}
