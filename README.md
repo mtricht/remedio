@@ -27,7 +27,7 @@ TODO
 
 ## TODO
 
-- [ ] Github actions
+- [x] Github actions
 - [ ] Support multiple users
 - [ ] Use a different authentication mechanism
 - [ ] Multiple times a day / every other day / weekly
