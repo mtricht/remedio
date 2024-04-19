@@ -54,5 +54,5 @@ func runServer() {
 	r.Get("/take/{ID}", controller.Take)
 	r.Handle("/*", http.FileServer(http.FS(files.StaticFiles)))
 	log.Printf("started on port %d", config.Config.Port)
-	log.Fatal(http.ListenAndServe(fmt.Sprintf("localhost:%d", config.Config.Port), r))
+	log.Fatal(http.ListenAndServe(fmt.Sprintf("0.0.0.0:%d", config.Config.Port), r))
 }

@@ -1,7 +1,7 @@
 # remedio
 [![Go Report Card](https://goreportcard.com/badge/github.com/mtricht/remedio)](https://goreportcard.com/report/github.com/mtricht/remedio)
 
-A simple self-hosted medication helper/reminder.
+A minimalistic self-hosted medication helper/reminder.
 
 Features:
 - Keep track of current supply
@@ -12,10 +12,24 @@ Screenshot:
 ![screenshot](screenshot.png)
 
 ## Run as docker
-TODO
+```bash
+docker run -e REMEDIO_NOTIFICATION_URL="ntfy://username:password@ntfy.sh/remedio?actions=view, Open Remedio, https://remedio.my.website" -p 8080:8080 ghcr.io/mtricht/remedio:master
+```
 
 ## Docker compose
-TODO
+```yaml
+services:
+  remedio:
+    container_name: remedio
+    restart: unless-stopped
+    environment:
+      - REMEDIO_NOTIFICATION_URL="ntfy://username:password@ntfy.sh/remedio?actions=view, Open Remedio, https://remedio.my.website"
+    ports:
+      - 8080:8080
+    volumes:
+      - ./sqlite.db:/usr/src/app/sqlite.db
+    image: ghcr.io/mtricht/remedio:master
+```
 
 ## Configuration
 | Configuration name                                                                                         | Required | Description                                                                                                  |
