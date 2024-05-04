@@ -13,7 +13,7 @@ Screenshot:
 
 ## Run as docker
 ```bash
-docker run -e REMEDIO_NOTIFICATION_URL="ntfy://username:password@ntfy.sh/remedio?actions=view, Open Remedio, https://remedio.my.website" -p 8080:8080 ghcr.io/mtricht/remedio:master
+docker run -e "REMEDIO_NOTIFICATION_URL=ntfy://username:password@ntfy.sh/remedio?actions=view, Open Remedio, https://remedio.my.website" -p 8080:8080 ghcr.io/mtricht/remedio:master
 ```
 
 ## Docker compose
@@ -23,7 +23,8 @@ services:
     container_name: remedio
     restart: unless-stopped
     environment:
-      - REMEDIO_NOTIFICATION_URL="ntfy://username:password@ntfy.sh/remedio?actions=view, Open Remedio, https://remedio.my.website"
+      - TZ=Europe/Amsterdam
+      - "REMEDIO_NOTIFICATION_URL=ntfy://username:password@ntfy.sh/remedio?actions=view, Open Remedio, https://remedio.my.website"
     ports:
       - 8080:8080
     volumes:
