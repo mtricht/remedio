@@ -7,6 +7,7 @@ RUN go build -v -o /usr/local/bin/remedio cmd/main.go
 FROM alpine
 WORKDIR /root
 COPY --from=builder /usr/local/bin/remedio /usr/local/bin/remedio
+RUN apk add --no-cache tzdata
 
 EXPOSE 8080
 
