@@ -14,7 +14,7 @@ import (
 func RunCron() {
 	now := time.Now().Format("15:04:00")
 	var medication []database.Medication
-	database.DB.Where(gorm.Expr("time(time) = ?", now)).Find(&medication)
+	database.DB.Debug().Where(gorm.Expr("time(time) = ? AND supply > 0", now)).Find(&medication)
 	if len(medication) == 0 {
 		return
 	}
