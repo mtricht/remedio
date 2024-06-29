@@ -12,7 +12,9 @@
                 {{ if .LastTaken.Valid }}
                     <br />{{ .LastTaken.Time.Format "2006/01/02 15:04" }} last taken
                 {{ end }}
-                {{ if lt .Supply 7 }}
+                {{ if eq .Supply 0 }}
+                    <strong class="error">No more supply!</strong>
+                {{ else if lt .Supply 7 }}
                     <strong class="error">Less than a week of supply!</strong>
                 {{ end }}
             </div>
